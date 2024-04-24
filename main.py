@@ -17,17 +17,11 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
-if torch.cuda.is_available():
-    print("Working on GPU")
-else:
-    print("Working on CPU")
-
 enviroment = DQNBreakout(device=device, render_mode='human')
 
 model = AtariNet(no_actions=4)
 
-model.load_the_model("/Users/xmickos/Documents/DIPLOM/07_04_2024/models/latest-19_04_1.pt")
-# model.load_state_dict(torch.load("/Users/xmickos/Documents/DIPLOM/07_04_2024/models/latest_17_04.pt", map_location=torch.device("cpu")))
+model.load_the_model("/Users/xmickos/Documents/DIPLOM/07_04_2024/models/latest_23_04.pt")
 
 agent = Agent(model=model,
               device=device,

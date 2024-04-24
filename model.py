@@ -55,7 +55,7 @@ class AtariNet(nn.Module):
             os.makedirs("models")
         torch.save(self.state_dict(), weights_filename)
 
-    def load_the_model(self, weight_filename="/Users/xmickos/Documents/DIPLOM/07_04_2024/models/latest-3.pt", device='cpu'):
+    def load_the_model(self, weight_filename="/Users/xmickos/Documents/DIPLOM/07_04_2024/models/latest-23_04.pt", device='cpu'):
         try:
             self.load_state_dict(torch.load(weight_filename, map_location=device))
             print(f"Successfully loaded weights file {weight_filename}")
